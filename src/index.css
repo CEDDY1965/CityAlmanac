@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700');
+
+body {
+  background: linear-gradient(to right, #FFFFFF, #FEFEFE); /*linear-gradient(to right, #FFE39F, #FFC4E1);*/
+  color: #111111;
+  font-family: 'Quicksand', sans-serif;
+}
+.full{
+	font-size: 125%;
+}
+
+.bordered{
+	border: 2px solid;
+}
+label{
+	
+	padding-right: 15px;
+}
+.weatherApp {
+  padding-top: 60px;
+  .weatherQuery {
+      input {
+        font-size: 20px;
+        font-weight: 300;
+        font-family: 'Quicksand', sans-serif;
+        background: #111111;
+        text-align: center;
+        padding: 20px 0;
+        border: 0px;
+        outline: 0px;
+        color: white;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+  }
+  .weatherInfo {
+    display: flex;
+    flex-direction: column;
+    .cityName {
+		background-color: red;
+      div {
+		background-color: red;
+        font-size: 64px;
+        padding: 20px;
+        text-align: center;
+        font-weight: 50;
+		border: 2px solid #ECF0F1;
+		margin: 0;
+		outline-style: solid;
+        span {
+          font-weight: 300;
+        }
+      }
+    }
+    .tempInfo {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: stretch;
+      flex-wrap: wrap;
+      div {
+        font-size: 14px;
+        text-align: center;
+        background: rgba(255, 255, 255, .3);
+        padding: 10px;
+        flex-grow: 1;
+        min-width: 100px;
+        margin: 1px;
+        span {
+          display: block;
+          font-size: 26px;
+        }
+      }
+    }
+  }
+  .info {
+    text-align: center;
+    margin: 60px 0;
+    font-weight: bold;
+  }
+}
+#child {
+    line-height: 200px;
+}
+img {
+   border:5px double #021a40;
+}
+.SectionTitle{
+	font-weight: bold;
+	border-bottom: 1px solid #000;
+}
+.cityName{
+	font-weight: bold;
+	font-size: 150%;
+}
