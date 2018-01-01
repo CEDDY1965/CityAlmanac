@@ -31,17 +31,9 @@ getPerson = () => {
       return response;
     })
     .then( function(response) {
-      setTimeout( function() {
-        main.setState({
-        infoStatus: 'loaded',
-		people: main.state.people
-      });
-      }, 300);
       return response.json();
     })
     .then( function(data) {
-		//alert(data.results[0].picture.thumbnail);
-		console.log("1");
   		let person = 
 		{
 			FirstName: data.results[0].name.first,
@@ -51,19 +43,15 @@ getPerson = () => {
 			MEDIUM_IMG:       data.results[0].picture.medium,
 			LARGE_IMG:       data.results[0].picture.large
 		};
-		console.log("2 " + main.state.people.length );
-		
 		main.setState({
-		people: main.state.people.concat(person)
+			people: main.state.people.concat(person)
 		});
 		
-		console.log("3");
 	})
     .catch( function(error) {
-		console.log("ERROR=" +error);
-      main.setState({
-        infoStatus: 'error'
-      });
+		main.setState({
+			infoStatus: 'error'
+		});
     })
 };
 //-----    End getPerson()    --------------------   
@@ -84,15 +72,12 @@ render(){
    return(
 		<div>
 			<div className="row">
-				<div className="col-sm-12">&nbsp;</div>
 				<div className="col-sm-12 SectionTitle"> People </div>
 				<div className="col-sm-2" id="child">Celebrities</div>
-				<div className="col-sm-4
-				">
+				<div className="col-sm-8">
 					<DemoCarousel people={this.state.people}/>
 				</div>
 			</div>
-			<div className="SectionTitle row"></div>
 		</div>
 		);
 }

@@ -16,9 +16,9 @@ label{
 	
 	padding-right: 15px;
 }
-.weatherApp {
+.cityApp {
   padding-top: 60px;
-  .weatherQuery {
+  .cityQuery {
       input {
         font-size: 20px;
         font-weight: 300;
@@ -35,7 +35,7 @@ label{
         left: 0;
       }
   }
-  .weatherInfo {
+  .cityInfo {
     display: flex;
     flex-direction: column;
     .cityName {
@@ -90,6 +90,7 @@ img {
 .SectionTitle{
 	font-weight: bold;
 	border-bottom: 1px solid #000;
+	padding-top: 75px;
 }
 .cityName{
 	font-weight: bold;

@@ -20,10 +20,7 @@ class CityAlmanac extends React.Component {
 	  longitude: undefined
     };
   };
-  //static defaultProps = {
-  // city: 'Sacramento',
-  //};
-//-----    End CityAlmanac Constructior()    --------------------  
+ //-----    End CityAlmanac Constructior()    --------------------  
 
   
 //-----    Begin getCoords()    --------------------  
@@ -41,7 +38,7 @@ class CityAlmanac extends React.Component {
     } else {
       query = city;
     }  
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${query}&units=imperial&APPID=e949d70b2f804223b7ebdcf1e73fd933`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${query}&units=imperial&APPID=e949d70b2f804223b7ebdcf1e73fd933`)
     .then( function(response) {
       return response;
     })
@@ -101,13 +98,13 @@ render() {
 		message= "Enter a city......";
 		data = 
 			<div>
-				<img width='100%' height='100%' src="./city.jpg" alt="city drawing"/>
+				<img width='100%' height='100%' src="./city.jpg" alt="drawing of city"/>
 			</div>
 	}
 
     else if (infoStatus === 'loaded') {
       data = 
-	  <div className="weatherInfo">
+	  <div className="cityInfo">
 		  <div className="row cityName">
 			<div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">{city} <span>({country})</span></div>
 		  </div>
@@ -115,22 +112,15 @@ render() {
 		  <GoogleMap city={city} latitude={latitude} longitude={longitude} />
 		  <People  />
         </div>
-    } else if (infoStatus === 'loading') {
-      data = <div className="info loading">Loading data...</div>
-    } else if (infoStatus === 'error') {
-      data = <div className="info error">Error while loading data. Try again later.</div>
-    }
-
+    } 
+	
 	return (
-		  <div className="weatherApp">
+		  <div className="cityApp">
 			<div className="row">
-				<div className="col-xs-8 col-sm-8 col-md-8 col-lg-8" >
-					&nbsp;
-				</div>
-				<div className="col-xs-2 col-sm-2 col-md-2 col-lg-2" >
+				<div className="col-md-offset-7 col-md-2" >
 					{message}
 				</div>
-				<div className="col-xs-2 col-sm-2 col-md-2 col-lg-2 weatherQuery">
+				<div className="col-md-2 cityQuery">
 				  <form onSubmit={this._handleSubmit}>
 					<input 
 					  type="text" 
@@ -138,9 +128,6 @@ render() {
 					  placeholder="Search a City..."
 					/>
 				  </form>
-				<div className="col-xs-10 col-sm-10 col-md-10 col-lg-10" >
-					&nbsp;
-				</div>
 				</div>
 			</div>
 			{data}

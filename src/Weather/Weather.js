@@ -29,7 +29,7 @@ export default class Weather extends React.Component{
     } else {
       query = city;
     }  
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${query}&units=imperial&APPID=e949d70b2f804223b7ebdcf1e73fd933`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${query}&units=imperial&APPID=e949d70b2f804223b7ebdcf1e73fd933`)
     .then( function(response) {
       return response;
     })
@@ -76,13 +76,11 @@ render() {
     if (infoStatus === 'loaded') {
       data = <div className="weatherInfo">
           <div className="row">
-			<div className="col-sm-12">&nbsp;</div>
 			<div className="col-sm-12 SectionTitle"> CurrentWeather</div>
             <div className="col-sm-2">Temperature</div><div className="col-sm-10">{temperature}&deg;</div>
             <div className="col-sm-2">Humidity</div><div className="col-sm-10">{humidity}%</div>
             <div className="col-sm-2">Wind</div><div className="col-sm-10">{wind}m/s</div>
           </div>
-		  <div className="SectionTitle row"></div>
         </div>
 		
     } else if (infoStatus === 'loading') {

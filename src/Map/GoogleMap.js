@@ -35,7 +35,6 @@ setZoom (zoom_){
 
 RenderStatic()
 {
-
 	//------------------  Set up world/continent/city level imgs---------------------------------/
 	const IMG_URL_0_EMBED = "https://www.google.com/maps/embed/v1/" + this.state.mode + "?key=AIzaSyDQQZBPlSD-f3g7j9YNN2DkjlWhGTMOnmI" + (this.state.mode === "place" ? "&zoom=0" : "") + "&" + (this.state.mode === "place" ? "q" : "location") + "=" + this.props.city;
 	const IMG_URL_5_EMBED = "https://www.google.com/maps/embed/v1/" + this.state.mode + "?key=AIzaSyDQQZBPlSD-f3g7j9YNN2DkjlWhGTMOnmI" + (this.state.mode === "place" ? "&zoom=5" : "") + "&" + (this.state.mode === "place" ? "q" : "location") + "=" + this.props.city;
@@ -65,7 +64,6 @@ RenderStatic()
 	const data = 
 	        <div>
 				<div className="row">
-					<div className="col-sm-12">&nbsp;</div>
 					<div className="col-sm-12 SectionTitle"> Geography </div>
 					<div className="col-sm-2" id="child">Google Map</div>
 					<div className="col-sm-10">
@@ -87,7 +85,6 @@ RenderStatic()
 						<a href={A_URL}>Google Maps</a> {IMG_URL_EMBED}
 					</div>
 				</div>
-				<div className="SectionTitle row"></div>
 			</div>
 
 			return(data);
