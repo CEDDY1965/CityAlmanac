@@ -81,9 +81,6 @@ label{
     font-weight: bold;
   }
 }
-#child {
-    line-height: 200px;
-}
 img {
    border:5px double #021a40;
 }
@@ -95,4 +92,26 @@ img {
 .cityName{
 	font-weight: bold;
 	font-size: 150%;
+}
+
+
+/* For Mobile */
+@media screen and (max-width: 540px) {
+	#child {
+		line-height: 50px;
+	}
+}
+
+/* For Tablets */
+@media screen and (min-width: 540px) and (max-width: 780px) {
+	#child {
+		line-height: 50px;
+	}
+}
+
+/* For all else */
+@media screen and (min-width: 780px) {
+	#child {
+		line-height: 200px;
+	}
 }
